@@ -1,65 +1,6 @@
 {
   "users": [
     {
-      "name": "João",
-      "email": "joaonatan93@gmail.com",
-      "lastName": "Pascon",
-      "tel": "34058889",
-      "cel": "19994402347",
-      "desc": "Eu mesmo",
-      "adress": {
-        "cep": "13469-600",
-        "logradouro": "Rua Armando Alves",
-        "complemento": "",
-        "bairro": "Parque Gramado",
-        "localidade": "Americana",
-        "uf": "SP",
-        "unidade": "",
-        "ibge": "3501608",
-        "gia": "1650",
-        "number": "646"
-      },
-      "id": 4
-    },
-    {
-      "name": "Nayara",
-      "email": "nayara@gmail.com",
-      "lastName": "Furtado",
-      "tel": "340599039",
-      "cel": "19828919",
-      "desc": "Namorada",
-      "adress": {
-        "cep": "13479-040",
-        "logradouro": "Rua Arco-Íris",
-        "complemento": "",
-        "bairro": "Jardim Thelja",
-        "localidade": "Americana",
-        "uf": "SP",
-        "unidade": "",
-        "ibge": "3501608",
-        "gia": "1650",
-        "number": "999"
-      },
-      "id": 5
-    },
-    {
-      "name": "asd",
-      "email": "sa",
-      "lastName": "asd",
-      "tel": "asd",
-      "cel": "asd",
-      "desc": "asd",
-      "adress": {
-        "cep": "",
-        "logradouro": "",
-        "bairro": "",
-        "localidade": "",
-        "uf": "",
-        "number": ""
-      },
-      "id": 6
-    },
-    {
       "name": "Pedro",
       "email": "pedroalavares333@gmail.com",
       "lastName": "Alvares Cabral",
@@ -81,7 +22,7 @@
       "id": 7
     },
     {
-      "name": "José",
+      "name": "José ",
       "email": "jose@gmail.com",
       "lastName": "Pascon",
       "tel": "34059990",
@@ -101,84 +42,125 @@
       "id": 8
     },
     {
-      "name": "Luiz",
-      "email": "",
-      "lastName": "",
-      "tel": "",
-      "cel": "",
-      "desc": "",
+      "name": "Nayara",
+      "email": "nay@gmail.com",
+      "lastName": "Almeida",
+      "tel": "34058889",
+      "cel": "1999440223",
+      "desc": "Cliente",
       "adress": {
-        "cep": "",
-        "logradouro": "",
-        "bairro": "",
-        "localidade": "",
-        "uf": "",
-        "number": ""
+        "cep": "13469-700",
+        "logradouro": "Rua Emílio Colombo",
+        "complemento": "",
+        "bairro": "Parque São Jerônimo",
+        "localidade": "Americana",
+        "uf": "SP",
+        "unidade": "",
+        "ibge": "3501608",
+        "gia": "1650"
       },
+      "number": "665",
       "id": 9
     },
     {
-      "name": "Alvaro",
-      "email": "",
-      "lastName": "",
+      "name": "Alan",
+      "email": "alangoncalves@gmail.com",
+      "lastName": "Gonçalves",
       "tel": "",
-      "cel": "",
-      "desc": "",
+      "cel": "1999299201",
+      "desc": "Fornecedor",
       "adress": {
-        "cep": "",
-        "logradouro": "",
-        "bairro": "",
-        "localidade": "",
-        "uf": "",
-        "number": ""
+        "cep": "13469-800",
+        "logradouro": "Rua Adelino Ferreira Campos",
+        "complemento": "",
+        "bairro": "Jardim Residencial Dona Rosa",
+        "localidade": "Americana",
+        "uf": "SP",
+        "unidade": "",
+        "ibge": "3501608",
+        "gia": "1650"
       },
+      "number": "677",
       "id": 10
     },
     {
-      "name": "Castro",
-      "email": "",
-      "lastName": "",
-      "tel": "",
+      "name": "Alice",
+      "email": "aliceh2@gmail.com",
+      "lastName": "Higan",
+      "tel": "34059905",
       "cel": "",
-      "desc": "",
+      "desc": "Cliente",
       "adress": {
-        "cep": "",
-        "logradouro": "",
-        "bairro": "",
-        "localidade": "",
-        "uf": "",
-        "number": ""
+        "cep": "13469-500",
+        "logradouro": "Avenida Tietê",
+        "complemento": "",
+        "bairro": "Vila Dainese",
+        "localidade": "Americana",
+        "uf": "SP",
+        "unidade": "",
+        "ibge": "3501608",
+        "gia": "1650"
       },
+      "number": "113",
       "id": 11
     },
     {
-      "name": "Castro",
+      "name": "Helbert",
       "email": "",
-      "lastName": "",
-      "tel": "",
-      "cel": "",
-      "desc": "",
+      "lastName": "Richards",
+      "tel": "34199209",
+      "cel": "199928292",
+      "desc": "Fornecedor",
       "adress": {
-        "cep": "",
-        "logradouro": "",
-        "bairro": "",
-        "localidade": "",
-        "uf": "",
-        "number": ""
+        "cep": "13469-600",
+        "logradouro": "Rua Armando Alves",
+        "complemento": "",
+        "bairro": "Parque Gramado",
+        "localidade": "Americana",
+        "uf": "SP",
+        "unidade": "",
+        "ibge": "3501608",
+        "gia": "1650"
       },
+      "number": "333",
       "id": 12
     }
   ],
   "logs": [
     {
       "action": "post",
-      "userName": "Alvaro",
-      "id": "indefinido"
+      "userName": "Nayara",
+      "id": 1
+    },
+    {
+      "action": "post",
+      "userName": "Alan",
+      "id": 2
+    },
+    {
+      "action": "put",
+      "userName": "Alan Gonçalves",
+      "id": 3
+    },
+    {
+      "action": "post",
+      "userName": "Alice Higan",
+      "id": 4
+    },
+    {
+      "action": "post",
+      "userName": "Helbert Richards",
+      "id": 5
+    },
+    {
+      "action": "post",
+      "userName": "Fagner ",
+      "id": 6
     },
     {
       "action": "delete",
-      "userName": "Castro",
-      "id": "undefined"
+      "userName": "Fagner ",
+      "id": 7
     }
   ]
 }

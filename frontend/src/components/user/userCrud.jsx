@@ -3,10 +3,10 @@ import axios from 'axios'
 import Main from '../templates/main'
 
 import Btn from '../templates/btn'
-import GetAndress from '../andressUtil.js'
+import GetAdress from '../andressUtil.js'
 import Input from '../input'
 
-const getCep = GetAndress;
+const getCep = GetAdress;
 const headerProps = {
     icon: 'users',
     title: 'Cadastro de usuários',
@@ -19,7 +19,7 @@ const baseUrlLog = 'http://localhost:3001/logs'
 const initialState = {
     user: { name: '', email: '', lastName: '', tel: '', cel: '', desc: '', adress: {}},
     list: [],
-    andress: {
+    adress: {
         cep: '',
         logradouro: '',
         bairro: '',
@@ -33,9 +33,6 @@ export default class UserCrud extends Component {
 
     state = {...initialState }
 
-    componentWillMount() {
-      
-    }
 
     clear() {
         this.setState({user: initialState.user})
@@ -43,20 +40,20 @@ export default class UserCrud extends Component {
 
     save() {
         const user = this.state.user
-        user.adress = this.state.andress;
+        user.adress = this.state.adress;
         const method = user.id ? 'put' : 'post' // se o is estiver valido eu dou update se não eu salvo
         const url = user.id ? `${baseUrl}/${user.id}` : baseUrl
         this.saveLog(method, user);
         axios[method](url, user)
             .then(resp => {
-                this.setState({ user: initialState.user })
+                this.setState({ user: initialState.user, adress: initialState.adress })
             })
     }
 
     saveLog(action, user) {
         const log = {
             action: action,
-            userName: user.name
+            userName: user.name + ' ' + user.lastName
         }
         axios.post(baseUrlLog, log);
     }
@@ -73,15 +70,15 @@ export default class UserCrud extends Component {
         })
     }
 
-    getAndress(event){
-        const andress = { ...this.state.andress }
-        andress[event.target.name] = event.target.value;
-        this.setState({andress: andress})
+    getAdress(event){
+        const adress = { ...this.state.adress }
+        adress[event.target.name] = event.target.value;
+        this.setState({adress: adress})
         
-        if(andress.cep.length === 8) {
+        if(adress.cep.length === 8) {
         getCep(event.target.value).then(value => {
             if(value) {
-                this.setState({andress: value})
+                this.setState({adress: value})
             }
         })
     }
@@ -157,7 +154,7 @@ export default class UserCrud extends Component {
                     </div>  
                 </div>
                 <hr/>
-                {this.renderAndress()}  
+                {this.renderAdress()}  
                 <hr/>
                 {this.renderButtons()}
             </div>
@@ -181,7 +178,7 @@ export default class UserCrud extends Component {
                 )
     }
 
-    renderAndress() {
+    renderAdress() {
         return (
             <div className="form">
                 <span> 
@@ -192,8 +189,8 @@ export default class UserCrud extends Component {
                         <div className="form-group">
                             <label>CEP</label>
                             <input type="text" className="form-control"
-                                name="cep" value={this.state.andress.cep}
-                                onChange={ e => this.getAndress(e)}
+                                name="cep" value={this.state.adress.cep}
+                                onChange={ e => this.getAdress(e)}
                                 placeholder="Digite o cep..." />
                         </div>
                     </div>
@@ -201,7 +198,7 @@ export default class UserCrud extends Component {
                         <div className="form-group">
                             <label>Rua</label>
                             <input type="text" className="form-control"
-                                name="logradouro" value={this.state.andress.logradouro}
+                                name="logradouro" value={this.state.adress.logradouro}
                                 onChange={ e => this.updateField(e)}
                                 placeholder="Digite a rua..." />
                         </div>
@@ -210,8 +207,8 @@ export default class UserCrud extends Component {
                         <div className="form-group">
                             <label>Bairro</label>
                             <input type="text" className="form-control"
-                                name="bairro" value={this.state.andress.bairro}
-                                onChange={ e => this.getAndress(e)}
+                                name="bairro" value={this.state.adress.bairro}
+                                onChange={ e =>this.updateField(e)}
                                 placeholder="Digite o Bairro..." />
                         </div>
                     </div>
@@ -219,8 +216,8 @@ export default class UserCrud extends Component {
                         <div className="form-group">
                             <label>Cidade</label>
                             <input type="text" className="form-control"
-                                name="localidade" value={this.state.andress.localidade}
-                                onChange={ e => this.getAndress(e)}
+                                name="localidade" value={this.state.adress.localidade}
+                                onChange={ e => this.updateField(e)}
                                 placeholder="Digite a cidade..." />
                         </div>
                     </div>
@@ -228,8 +225,8 @@ export default class UserCrud extends Component {
                         <div className="form-group">
                             <label>Estado</label>
                             <input type="text" className="form-control"
-                                name="uf" value={this.state.andress.uf}
-                                onChange={ e => this.getAndress(e)}
+                                name="uf" value={this.state.adress.uf}
+                                onChange={ e => this.updateField(e)}
                                 placeholder="Digite o estado..." />
                         </div>
                     </div>
@@ -237,8 +234,8 @@ export default class UserCrud extends Component {
                         <div className="form-group">
                             <label>Número</label>
                             <input type="number" className="form-control"
-                                name="number" value={this.state.andress.number}
-                                onChange={ e => this.getAndress(e)}
+                                name="number" value={this.state.adress.number}
+                                onChange={ e => this.updateField(e)}
                                 placeholder="Digite o numero..." />
                         </div>
                     </div>

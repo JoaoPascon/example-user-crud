@@ -1,5 +1,5 @@
 import './logo.css'
-import logo from '../../assets/images/player_two.jpg'
+import logo from '../../assets/images/agenda.jpg'
 import React from 'react' 
 import { Link } from 'react-router-dom'
 
